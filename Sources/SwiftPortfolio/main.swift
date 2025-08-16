@@ -22,4 +22,12 @@ struct SwiftPortfolio: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try SwiftPortfolio().publish(withTheme: .foundation, deployedUsing: .gitHub("cecygsn/portfolioSwiftTest"))
+//try SwiftPortfolio().publish(withTheme: .foundation, deployedUsing: .gitHub("cecygsn/portfolioSwiftTest"))
+try SwiftPortfolio().publish(using: [
+    .addMarkdownFiles(),
+    .copyResources(),
+    .generateHTML(withTheme: .foundation),
+    .generateRSSFeed(including: [.posts]),
+    .generateSiteMap(),
+    .deploy(using: .gitHub("cecygsn/portfolioSwiftTest", branch: "main", useSSH: false))
+])
