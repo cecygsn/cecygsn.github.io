@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:swift-portfolio}",
+            "name": "Debug SwiftPortfolio",
+            "program": "${workspaceFolder:swift-portfolio}/.build/debug/SwiftPortfolio",
+            "preLaunchTask": "swift: Build Debug SwiftPortfolio"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:swift-portfolio}",
+            "name": "Release SwiftPortfolio",
+            "program": "${workspaceFolder:swift-portfolio}/.build/release/SwiftPortfolio",
+            "preLaunchTask": "swift: Build Release SwiftPortfolio"
+        }
+    ]
+}
