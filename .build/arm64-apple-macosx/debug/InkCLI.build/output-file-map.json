@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/master.swiftdeps"
+  },
+  "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/checkouts/ink/Sources/InkCLI/Printing.swift": {
+    "dependencies": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/Printing.d",
+    "object": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/Printing.swift.o",
+    "swiftmodule": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/Printing~partial.swiftmodule",
+    "swift-dependencies": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/Printing.swiftdeps"
+  },
+  "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/checkouts/ink/Sources/InkCLI/main.swift": {
+    "dependencies": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/main.d",
+    "object": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/main.swift.o",
+    "swiftmodule": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/InkCLI.build/main.swiftdeps"
+  }
+}

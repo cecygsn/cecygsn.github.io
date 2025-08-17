@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/index-build/arm64-apple-macosx/debug/Sweep.build/master.swiftdeps"
+  },
+  "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/index-build/checkouts/sweep/Sources/Sweep/Sweep.swift": {
+    "dependencies": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/index-build/arm64-apple-macosx/debug/Sweep.build/Sweep.d",
+    "object": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/index-build/arm64-apple-macosx/debug/Sweep.build/Sweep.swift.o",
+    "swiftmodule": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/index-build/arm64-apple-macosx/debug/Sweep.build/Sweep~partial.swiftmodule",
+    "swift-dependencies": "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/index-build/arm64-apple-macosx/debug/Sweep.build/Sweep.swiftdeps"
+  }
+}

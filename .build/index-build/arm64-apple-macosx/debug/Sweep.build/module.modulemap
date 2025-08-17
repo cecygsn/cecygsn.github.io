@@ -1,0 +1,4 @@
+module Sweep {
+    header "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/index-build/arm64-apple-macosx/debug/Sweep.build/Sweep-Swift.h"
+    requires objc
+}
