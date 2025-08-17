@@ -1,4 +1,0 @@
-module Files {
-    header "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/Files.build/Files-Swift.h"
-    requires objc
-}

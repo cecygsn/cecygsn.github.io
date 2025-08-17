@@ -1,4 +1,0 @@
-module Ink {
-    header "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/arm64-apple-macosx/debug/Ink.build/Ink-Swift.h"
-    requires objc
-}

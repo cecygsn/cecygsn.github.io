@@ -1,4 +1,0 @@
-module Plot {
-    header "/Users/ceciliasoto/Documents/playground/static swift portfolio/swift-portfolio/.build/index-build/arm64-apple-macosx/debug/Plot.build/Plot-Swift.h"
-    requires objc
-}
