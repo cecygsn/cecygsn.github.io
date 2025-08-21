@@ -1,20 +1,60 @@
+/* define custom fonts */
+/* UT Staybro Demo */
+@font-face {
+  font-family: 'UT Staybro Demo';
+  src: url('fonts/UT Staybro Demo.woff2') format('woff2'),
+       url('fonts/UT Staybro Demo.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* raleway-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/raleway-v36-latin-regular.woff2') format('woff2'),
+       url('fonts/raleway-v36-latin-regular.woff') format('woff');
+}
+/* raleway-italic - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/raleway-v36-latin-italic.woff2') format('woff2'),
+       url('fonts/raleway-v36-latin-italic.woff') format('woff');
+}
+/* raleway-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/raleway-v36-latin-700.woff2') format('woff2'),
+       url('fonts/raleway-v36-latin-700.woff') format('woff');
+}
+
 /* colors for Light Mode (default) */
 :root {
-  --color-bg: #FDFCFB;
-  --color-text: #383534;
-  --color-accent-primary: #913006;
+    --color-bg: #FDFCFB;
+    --color-text: #383534;
+    --color-accent-primary: #913006;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #383534;
-    --color-text: #FDFCFB;
-    --color-accent-primary: #F58E66;
-  }
+    :root {
+        --color-bg: #383534;
+        --color-text: #FDFCFB;
+        --color-accent-primary: #F58E66;
+    }
 }
 
 /* Make sure the viewport scales on mobiles */
-meta[name="viewport"] { content: "width=device-width, initial-scale=1"; }
+meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1";
+}
 
 * {
     margin: 0;
@@ -25,7 +65,7 @@ meta[name="viewport"] { content: "width=device-width, initial-scale=1"; }
 body {
     background: var(--color-bg);
     color: var(--color-text);
-    font-family: Helvetica, Arial;
+    font-family: 'Raleway', Arial;
     text-align: center;
     line-height: 1.6;
 }
@@ -37,35 +77,57 @@ a {
 .wrapper {
     margin-left: auto;
     margin-right: auto;
-    padding: 40px;
+    padding: 2%;
     text-align: left;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-bg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header .wrapper {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 10px;
+    text-align: center;
 }
 
-header .site-name {
-    font-size: clamp(2rem, 5vw, 5rem);
-    color: var(--color-accent-primary);
+.site-name {
+    font-size: clamp(6rem, 15vw, 20rem);
+    font-family: 'UT Staybro Demo', serif;
     font-weight: bold;
     text-decoration: none;
     text-align: left;
+    line-height: 1;
+    background: linear-gradient(to left, #913006, #F58E66);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 20px
 }
 
-nav {
-    margin-top: 20px;
+header .site-name {
+    font-size: clamp(4rem, 4vw, 7rem);
+}
+
+header nav li a {
+    background-color: var(--color-bg);
+    color: var(--color-accent-primary);
 }
 
 nav li {
     display: inline-block;
-    margin: 0 7px;
+    margin: 0 0.5em;
     line-height: 1.5em;
 }
 
-nav li a.selected {
-    text-decoration: underline;
+nav li a {
+    text-decoration: none;
+    background-color: var(--color-accent-primary);
+    color: var(--color-bg);
+    margin: 0.75em;
 }
 
 h1 {
@@ -88,16 +150,36 @@ p {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 5%;
 }
 
-.description {
-    margin-bottom: 40px;
+.container .wrapper {
+    width: 100%;
+    /* Makes both columns on main page equal width */
 }
 
-.item-list > li {
+.container .navigation-list {
+    font-size: clamp(2rem, 3vw, 6rem);
+    align-items: middle;
+    justify-content: space-between;
+}
+
+.navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.main-page {
+    flex-direction: column;
+}
+
+.item-list>li {
     display: block;
     padding: 20px;
     border-radius: 20px;
@@ -105,7 +187,7 @@ p {
     margin-bottom: 1em;
 }
 
-.item-list > li:last-child {
+.item-list>li:last-child {
     margin-bottom: 0;
 }
 
@@ -160,12 +242,13 @@ p {
 }
 
 .article img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 footer {
+    padding: 2%;
     margin-top: 1.5em;
     color: var(--color-text);
 }
@@ -174,19 +257,14 @@ footer p {
     text-align: center;
 }
 
-@media(max-width: 600px) {
-    .wrapper {
-        padding: 40px 20px;
-    }
-}
-
 /* For desktops */
 @media (min-width: 400px) {
-  .container {
-    flex-direction: row;
-  }
+    .container {
+        flex-direction: row;
+        align-items: center;
+    }
 
-  header {
-    width: 25%;
-  }
+    .wrapper {
+        width: 50vw;
+    }
 }
