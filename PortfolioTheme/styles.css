@@ -1,39 +1,42 @@
 /* define custom fonts */
 /* UT Staybro Demo */
 @font-face {
-  font-family: 'UT Staybro Demo';
-  src: url('fonts/UT Staybro Demo.woff2') format('woff2'),
-       url('fonts/UT Staybro Demo.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'UT Staybro Demo';
+    src: url('fonts/UT Staybro Demo.woff2') format('woff2'),
+        url('fonts/UT Staybro Demo.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
+
 /* raleway-regular - latin */
 @font-face {
-  font-display: swap;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/raleway-v36-latin-regular.woff2') format('woff2'),
-       url('fonts/raleway-v36-latin-regular.woff') format('woff');
+    font-display: swap;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/raleway-v36-latin-regular.woff2') format('woff2'),
+        url('fonts/raleway-v36-latin-regular.woff') format('woff');
 }
+
 /* raleway-italic - latin */
 @font-face {
-  font-display: swap;
-  font-family: 'Raleway';
-  font-style: italic;
-  font-weight: 400;
-  src: url('fonts/raleway-v36-latin-italic.woff2') format('woff2'),
-       url('fonts/raleway-v36-latin-italic.woff') format('woff');
+    font-display: swap;
+    font-family: 'Raleway';
+    font-style: italic;
+    font-weight: 400;
+    src: url('fonts/raleway-v36-latin-italic.woff2') format('woff2'),
+        url('fonts/raleway-v36-latin-italic.woff') format('woff');
 }
+
 /* raleway-700 - latin */
 @font-face {
-  font-display: swap;
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/raleway-v36-latin-700.woff2') format('woff2'),
-       url('fonts/raleway-v36-latin-700.woff') format('woff');
+    font-display: swap;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/raleway-v36-latin-700.woff2') format('woff2'),
+        url('fonts/raleway-v36-latin-700.woff') format('woff');
 }
 
 /* colors for Light Mode (default) */
@@ -41,15 +44,19 @@
     --color-bg: #FDFCFB;
     --color-text: #383534;
     --color-accent-primary: #913006;
+    --color-accent-secondary: #F58E66;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
     :root {
         --color-bg: #383534;
         --color-text: #FDFCFB;
         --color-accent-primary: #F58E66;
+        --color-accent-secondary: #913006;
     }
 }
+*/
 
 /* Make sure the viewport scales on mobiles */
 meta[name="viewport"] {
@@ -74,6 +81,10 @@ a {
     color: var(--color-accent-primary);
 }
 
+a:hover {
+    color: var(--color-accent-secondary);
+}
+
 .wrapper {
     margin-left: auto;
     margin-right: auto;
@@ -86,7 +97,7 @@ header {
     top: 0;
     z-index: 1000;
     background-color: var(--color-bg);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 0px var(--color-text);
 }
 
 header .wrapper {
@@ -101,33 +112,55 @@ header .wrapper {
     text-decoration: none;
     text-align: left;
     line-height: 1;
-    background: linear-gradient(to left, #913006, #F58E66);
+    background: linear-gradient(to left, var(--color-accent-primary), var(--color-accent-secondary));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    filter: drop-shadow(-0.05em 0.05em var(--color-text));
+    border-bottom: none;
 }
 
 header .site-name {
     font-size: clamp(4rem, 4vw, 7rem);
 }
 
-header nav li a {
-    background-color: var(--color-bg);
-    color: var(--color-accent-primary);
-}
-
 nav li {
     display: inline-block;
-    margin: 0 0.5em;
-    line-height: 1.5em;
+    margin: 0 1em;
+    line-height: 1.75em;
 }
 
 nav li a {
     text-decoration: none;
-    background-color: var(--color-accent-primary);
-    color: var(--color-bg);
+    color: var(--color-accent-primary);
     margin: 0.75em;
+    padding-bottom: 0.2em;
+    position: relative;
+}
+
+nav li a::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+nav li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+nav li a::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: var(--color-text);
+    z-index: -1;
+    transition: transform .3s ease;
 }
 
 h1 {
@@ -147,6 +180,11 @@ h2 {
 p {
     margin-top: 0;
     margin-bottom: 1.6rem;
+}
+
+p a {
+    text-decoration: none;
+    border-bottom: 0.2em dashed;
 }
 
 .container {
@@ -170,7 +208,6 @@ p {
 
 .navigation-list {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
 }
@@ -179,12 +216,21 @@ p {
     flex-direction: column;
 }
 
+.item-list {
+    flex-flow: row wrap;
+    display: flex;
+    gap: 25px;
+}
+
 .item-list>li {
     display: block;
     padding: 20px;
-    border-radius: 20px;
-    background-color: var(--color-bg);
+    border-style: solid;
+    border-width: 10px;
+    border-color: var(--color-text);
+    box-shadow: 20px -16px var(--color-text);
     margin-bottom: 1em;
+    width: 100%;
 }
 
 .item-list>li:last-child {
@@ -209,8 +255,7 @@ p {
     display: inline-block;
     color: var(--color-bg);
     background-color: var(--color-accent-primary);
-    padding: 4px 6px;
-    border-radius: 5px;
+    padding: 6px;
     margin-right: 5px;
     margin-bottom: 5px;
 }
@@ -219,6 +264,11 @@ p {
 .tag a {
     text-decoration: none;
     color: var(--color-bg);
+}
+
+.tag-list a:hover,
+tag a:hover {
+    color: var(--color-accent-secondary)
 }
 
 .item-page .tag-list {
