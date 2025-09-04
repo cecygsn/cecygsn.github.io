@@ -41,22 +41,23 @@
 
 /* colors for Light Mode (default) */
 :root {
-    --color-bg: #FDFCFB;
-    --color-text: #383534;
-    --color-accent-primary: #913006;
-    --color-accent-secondary: #F58E66;
+    --color-bg: #FFFFFF;
+    --color-text: #1A1A1A;
+    --color-accent-primary: #0D47A1; /* AAA compliance - links/interactive */
+    --color-accent-secondary: #AD1457; /* AA compliance - accent/brand */
+    --color-accent-tertiary: #e1e1e1; /* shadows */
 }
 
-/*
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-bg: #383534;
-        --color-text: #FDFCFB;
-        --color-accent-primary: #F58E66;
-        --color-accent-secondary: #913006;
+        --color-bg: #121212;
+        --color-text: #F5F5F5;
+        --color-accent-primary: #FFD93D; /* AAA compliance - links */
+        --color-accent-secondary: #FF6B6B; /* AAA compliance - accent/brand */
+        --color-accent-tertiary: #333333; /* shadows */
     }
 }
-*/
 
 /* Make sure the viewport scales on mobiles */
 meta[name="viewport"] {
@@ -88,8 +89,22 @@ a:hover {
 .wrapper {
     margin-left: auto;
     margin-right: auto;
-    padding: 2%;
+    padding: 2% 5%;
     text-align: left;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-bg);
+    color: var(--color-accent-primary);
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px;
 }
 
 header {
@@ -97,7 +112,7 @@ header {
     top: 0;
     z-index: 1000;
     background-color: var(--color-bg);
-    box-shadow: 0px 5px 0px var(--color-text);
+    box-shadow: 0 5px 0 var(--color-accent-tertiary);
 }
 
 header .wrapper {
@@ -117,7 +132,7 @@ header .wrapper {
     background-clip: text;
     color: transparent;
     margin-bottom: 20px;
-    filter: drop-shadow(-0.05em 0.05em var(--color-text));
+    filter: drop-shadow(-0.05em 0.05em var(--color-accent-tertiary));
     border-bottom: none;
 }
 
@@ -126,17 +141,17 @@ header .site-name {
 }
 
 nav li {
-    display: inline-block;
-    margin: 0 1em;
-    line-height: 1.75em;
+    display: flex;
 }
 
 nav li a {
     text-decoration: none;
     color: var(--color-accent-primary);
-    margin: 0.75em;
-    padding-bottom: 0.2em;
     position: relative;
+}
+
+nav li a:hover {
+    color: var(--color-bg);
 }
 
 nav li a::before {
@@ -153,14 +168,13 @@ nav li a::before {
     content: " ";
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    inset: 0 0 0 0;
-    background: var(--color-text);
+    inset: 0;
+    background: var(--color-accent-secondary);
+    box-sizing: border-box;
+    box-shadow: -0.15em 0.15em var(--color-accent-tertiary);
     z-index: -1;
-    transition: transform .3s ease;
+    transition: transform .3s ease, 
+                box-shadow .3s ease;
 }
 
 h1 {
@@ -169,8 +183,8 @@ h1 {
 }
 
 h1 a {
-    color: var(--color-accent-primary);
     text-decoration: none;
+    border-bottom: 0.15em dashed;
 }
 
 h2 {
@@ -179,12 +193,13 @@ h2 {
 
 p {
     margin-top: 0;
+    line-height: 1.4;
     margin-bottom: 1.6rem;
 }
 
 p a {
     text-decoration: none;
-    border-bottom: 0.2em dashed;
+    border-bottom: 0.15em dashed;
 }
 
 .container {
@@ -208,7 +223,7 @@ p a {
 
 .navigation-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
 }
 
@@ -227,8 +242,8 @@ p a {
     padding: 20px;
     border-style: solid;
     border-width: 10px;
-    border-color: var(--color-text);
-    box-shadow: 20px -16px var(--color-text);
+    border-color: var(--color-accent-secondary);
+    box-shadow: -15px 15px var(--color-accent-tertiary);
     margin-bottom: 1em;
     width: 100%;
 }
@@ -268,7 +283,7 @@ p a {
 
 .tag-list a:hover,
 tag a:hover {
-    color: var(--color-accent-secondary)
+    color: var(--color-accent-secondary);
 }
 
 .item-page .tag-list {
@@ -315,6 +330,6 @@ footer p {
     }
 
     .wrapper {
-        width: 50vw;
+        max-width: 66ch;
     }
 }
