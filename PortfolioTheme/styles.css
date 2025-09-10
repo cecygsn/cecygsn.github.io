@@ -198,6 +198,7 @@ p {
     margin-top: 0;
     line-height: 1.4;
     margin-bottom: 1.6rem;
+    max-width: 75ch;
 }
 
 p a {
@@ -321,13 +322,14 @@ footer {
 }
 
 /* For desktops */
-@media (min-width: 400px) {
+@media (min-width: 1080px) {
     .container {
         flex-direction: row;
         align-items: center;
     }
 
     .wrapper {
-        max-width: 66ch;
+        align-items: center;
+        max-width: 40%;
     }
 }
