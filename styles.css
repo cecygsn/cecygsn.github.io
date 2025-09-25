@@ -121,7 +121,7 @@ header .wrapper {
 }
 
 .site-name {
-    font-size: clamp(6rem, 15vw, 20rem);
+    font-size: clamp(6rem, 10vw, 14rem);
     font-family: 'UT Staybro Demo', serif;
     font-weight: bold;
     text-decoration: none;
@@ -136,7 +136,7 @@ header .wrapper {
 }
 
 header .site-name {
-    font-size: clamp(4rem, 4vw, 7rem);
+    font-size: clamp(4rem, 6vw, 8rem);
 }
 
 .description {
@@ -206,6 +206,12 @@ p a {
     border-bottom: 0.15em dashed;
 }
 
+.reading-time {
+    font-size: 0.9em;
+    margin-bottom: 40px;
+    margin-top: -20px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -220,14 +226,14 @@ p a {
 }
 
 .container .navigation-list {
-    font-size: clamp(2rem, 3vw, 6rem);
+    font-size: clamp(2rem, 3vw, 4rem);
     justify-content: space-between;
 }
 
 .navigation-list {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center;
+    gap: 50px;
     flex-direction: row;
 }
 
@@ -330,6 +336,6 @@ footer {
 
     .wrapper {
         align-items: center;
-        max-width: 40%;
+        max-width: 100ch;
     }
 }
